@@ -14,7 +14,7 @@ angular.module('ticketcategories').controller('TicketcategoriesController', ['$s
 
             // Redirect after save
             ticketcategory.$save(function(response) {
-                $location.path('ticketcategories/' + response._id);
+                $location.path('ticketcategories');
 
                 // Clear form fields
                 $scope.name = '';
