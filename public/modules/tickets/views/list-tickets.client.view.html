@@ -1,0 +1,28 @@
+<section calss="view" data-ng-controller="TicketsController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Tickets</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-4 repeated-item" data-ng-repeat="ticket in tickets">
+            <div class="list-group ticket">
+                <a data-ng-href="#!/tickets/{{ticket._id}}" class="list-group-item">
+                    <h4 class="list-group-item-heading" data-ng-bind="ticket.name"></h4>
+                    <small class="list-group-item-text">
+                        Posted on
+                        <span data-ng-bind="ticket.created | date:'medium'"></span>
+                        <br>by
+                        <span data-ng-bind="ticket.user.displayName"></span>
+                        <br>Due
+                        <span>{{ticket.due | date:'mediumDate'}}</span>
+                        <br>Filed under
+                        <span>
+                            <em>"{{ticket.ticketcategory.name}}"</em> category</span>
+                    </small>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning text-center" data-ng-hide="!tickets.$resolved || tickets.length">
+        No Tickets yet, why don't you <a href="/#!/tickets/create">create one</a>?
+    </div>
+</section>

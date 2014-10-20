@@ -1,0 +1,57 @@
+<section data-ng-controller="TicketsController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1 data-ng-bind="ticket.data.name"></h1>
+    </div>
+    <div class="pull-right" data-ng-show="authentication.user._id == ticket.data.user._id">
+        <a class="btn btn-primary" href="/#!/tickets/{{ticket.data._id}}/edit">
+            <i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn btn-primary" data-ng-click="remove()">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <div class="viewTicket">
+
+
+        <small>
+            <em class="text-muted commentsColor repeated-item">
+                <span>Posted by</span>
+                <br>
+                <span data-ng-bind="ticket.data.user.displayName"></span>
+                <br>
+                <span>on</span>
+                <span data-ng-bind="ticket.data.created | date:'mediumDate'"></span>
+                <br>
+                <span>in</span>
+                <br>
+                <span>{{ticket.data.ticketcategory.name}} Category</span>
+                <div class="ticket-details">
+                    <h5>Ticket description</h5>
+                    <p>
+                        {{ticket.data.description}} 
+                        <br>{{ticket.data.due | date:'mediumDate'}}
+                    </p>
+                    <br>
+                </div>
+                <br>Replies
+                <br>
+                <div ng-repeat="comment in comments" class="commentsColor repeated-item">
+                    <br>
+                    <div class="replies">
+                        <p>{{comment.comment}}</p>
+                    </div>
+                    <span>Replied by: {{comment.user.displayName}}</span>
+                    <span>{{comment.created | date:'mediumDate'}}</span>
+                </div>
+            </em>
+        </small>
+    </div>
+
+    <div class="comment-box ">
+        <span class="commentsColor">Post A Reply To This Ticket</span>
+        <br>
+    <textarea ng-model="ticketcomment"></textarea>
+    <br>
+    <button class="btn btn-success" ng-click="postComment()">Post Comment</button>
+    </div>
+</section>

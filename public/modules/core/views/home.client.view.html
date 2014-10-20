@@ -1,0 +1,25 @@
+<section ng-controller="TicketsController" data-ng-init="find()">
+
+    <p>Total Number of Tickets within the system:
+        <div class="round" ng-bind="tickets.length"></div>
+    </p>
+    Recent Tickets:
+    <div class="row">
+        <div class="col-md-12">
+            <div class="recent ticket">
+                <ul>
+                    <li ng-repeat="recentTicket in recentTickets" class="repeated-item">
+                        <a class="recent" ng-href="#!/tickets/{{recentTicket._id}}">
+                            <i class="glyphicon glyphicon-fire"> </i>
+                            <h4>Requested by: {{recentTicket.user.displayName}}</h4>
+                            Ticket Name: {{recentTicket.name}}
+                            <br>Ticket created on: {{recentTicket.created | date:'medium'}}
+                            <br>Ticket due date: {{recentTicket.due | date:'medium'}}
+                            <br>Ticket Category: <a href="/#!/ticketcategories/{{recentTicket.ticketcategory._id}}/tickets">{{recentTicket.ticketcategory.name}}</a>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
