@@ -71,7 +71,7 @@ a:hover {
 }
 .mainContent {
     background: rgba(100, 100, 100, 1);
-    background-image: url(../img/brand/18.jpg);
+    background-image: url(/modules/core/img/brand/18.jpg);
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
