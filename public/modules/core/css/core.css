@@ -70,12 +70,7 @@ a:hover {
     border: 1px solid black;
 }
 .mainContent {
-    background: rgba(100, 100, 100, 1);
-    background-image: url(/modules/core/img/brand/18.jpg);
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover center;
+    background: url(/modules/core/img/brand/18.jpg) center center/cover no-repeat fixed rgba(100,100,100,1);
 }
 .viewTicket {
     color: white;
