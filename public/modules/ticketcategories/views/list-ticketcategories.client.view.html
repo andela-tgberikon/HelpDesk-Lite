@@ -3,7 +3,7 @@
         <h1>Ticketcategories</h1>
     </div>
     <div class="list-group">
-        <a data-ng-repeat="ticketcategory in ticketcategories" data-ng-href="#!/ticketcategories/{{ticketcategory._id}}" class="list-group-item">
+        <a data-ng-repeat="ticketcategory in ticketcategories" data-ng-href="#!/ticketcategories/{{ticketcategory._id}}/tickets" class="list-group-item">
 			<small class="list-group-item-text">
 				Posted on
 				<span data-ng-bind="ticketcategory.created | date:'medium'"></span>

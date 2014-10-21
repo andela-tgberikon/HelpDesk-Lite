@@ -18,4 +18,23 @@
 			<span data-ng-bind="ticketcategory.user.displayName"></span>
 		</em>
 	</small>
+	<div class="row">
+	<div class="col-md-4 repeated-item">
+	<div class="list-group" ng-repeat="ticket in ticketcategory.tickets">
+		<a href="#!/tickets/{{ticket._id}}" class="list-group-item ticket">
+			<br>{{ticket.name}}
+		<br>{{ticket.description}}
+
+		
+	<small>
+		<em class="text-muted">
+			<br>Posted on {{ticket.created | date:'mediumDate'}}
+			<br>Due on {{ticket.due | date:'mediumDate'}}
+		</em>
+	</small>
+	</a>
+	</div>
+</div>
+</div>
+	
 </section>

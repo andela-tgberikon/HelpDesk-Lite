@@ -9,6 +9,9 @@ module.exports = function(app) {
         .get(tickets.list)
         .put(users.requiresLogin, tickets.hasAuthorization, tickets.update);
 
+    // app.route('/tickets/:categoryId/created')
+    //     .get(tickets.getByDate);
+
     app.route('/tickets/:ticketId')
         .get(tickets.read)
         .put(users.requiresLogin, tickets.hasAuthorization, tickets.update)

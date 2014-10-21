@@ -11,7 +11,7 @@
                         Posted on
                         <span data-ng-bind="ticket.created | date:'medium'"></span>
                         <br>by
-                        <span data-ng-bind="ticket.user.displayName"></span>
+                        <!-- <a href="#!/users/{{ticket.user._id}}/tickets"> --><span data-ng-bind="ticket.user.displayName"></span><!-- </a> -->
                         <br>Due
                         <span>{{ticket.due | date:'mediumDate'}}</span>
                         <br>Filed under

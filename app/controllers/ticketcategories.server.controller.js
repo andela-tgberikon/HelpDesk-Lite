@@ -110,6 +110,21 @@ exports.list = function(req, res) {
     });
 };
 
+
+/**
+*   List Tickets within a category
+*/
+exports.listTickets = function(req, res) {
+
+    var _ticketcategory = {
+        total_number_of_tickets: req.ticketcategory.tickets.length,
+        data: req.ticketcategory.tickets
+    };
+    res.jsonp(_ticketcategory);
+};
+
+
+
 /**
  * Ticketcategory middleware
  */

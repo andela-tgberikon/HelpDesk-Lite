@@ -23,3 +23,15 @@ angular.module('tickets').factory('TicketsByCategory', ['$resource',
 		});
 	}
 ]);
+
+//Tickets service used to get list of Tickets by a user from the REST endpoint
+angular.module('tickets').factory('Users', ['$resource',
+	function($resource) {
+		return $resource('users/:ticketCategoryId/tickets', { userId: '@_id'
+		}, {
+			update: {
+				method: 'GET'
+			}
+		});
+	}
+]);

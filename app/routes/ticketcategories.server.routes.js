@@ -17,9 +17,9 @@ module.exports = function(app) {
 
     /*added this*/
     app.route('/ticketcategories/:ticketcategoryId/tickets')
-        
+        .get(ticketcategories.listTickets)
         .post(users.requiresLogin, ticketcategories.createTicket);
-        
+    
     // Finish by binding the Ticketcategory middleware
     app.param('ticketcategoryId', ticketcategories.ticketcategoryByID);
 };

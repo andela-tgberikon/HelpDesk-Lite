@@ -40,6 +40,7 @@ var TicketSchema = new Schema({
 		}],
 	status: {
 		type: String, 
+		default: 'Open',
 		enum: ['Open', 'Closed']
 	},
 	ticketcategory:{

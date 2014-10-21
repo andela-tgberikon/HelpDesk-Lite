@@ -1,8 +1,8 @@
 'use strict';
 
 // Tickets controller
-angular.module('tickets').controller('TicketsController', ['$scope', '$stateParams', '$location', 'Authentication', 'TicketsByCategory', 'Tickets', 'Ticketcategories', 'Ticketcomments',
-    function($scope, $stateParams, $location, Authentication, TicketsByCategory, Tickets, Ticketcategories, Ticketcomments) {
+angular.module('tickets').controller('TicketsController', ['$scope', '$stateParams', '$location', 'Authentication', 'TicketsByCategory', 'Tickets', 'Ticketcategories', 'Ticketcomments', 'Users',
+    function($scope, $stateParams, $location, Authentication, TicketsByCategory, Tickets, Ticketcategories, Ticketcomments, Users) {
         $scope.authentication = Authentication;
         $scope.ticketcategories = Ticketcategories.query();
 
@@ -69,6 +69,7 @@ angular.module('tickets').controller('TicketsController', ['$scope', '$statePara
 
         // Find a list of Tickets
         $scope.find = function() {
+
             Tickets.query({}, function(response) {
                 $scope.tickets = response[0].data;
                 $scope.recentTickets = [];
@@ -76,6 +77,12 @@ angular.module('tickets').controller('TicketsController', ['$scope', '$statePara
                     $scope.recentTickets.push(response[0].data[i]);
                 }
             });
+            // Ticketcategories.query({}, function(resp) {
+            //     var _ticketcategories = resp;
+            //     for (var i = 0; i < _ticketcategories.length; i++) {
+            //         console.log(_ticketcategories[i]);
+            //     }
+            // });
         };
 
 

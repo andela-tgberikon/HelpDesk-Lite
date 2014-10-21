@@ -23,3 +23,9 @@ angular.module('ticketcategories').config(['$stateProvider',
 		});
 	}
 ]);
+
+
+		// state('userticket', {
+		// 	url: '/users/:userId/tickets',
+		// 	templateUrl: 'modules/users/views/settings/edit-profile.client.view.html'
+		// }).
